@@ -1,19 +1,13 @@
 package main
 
-import (
-	"log"
-	"net/http"
+import (    
+    e "engine/server"
+    "myforum/server/database"
 
-	"myforum/database"
-	"myforum/handlers"
 )
 
 func main() {
-	database.InitDB()
-
-	http.HandleFunc("/register", handlers.RegisterHandler)
-	http.HandleFunc("/login", handlers.LoginHandler)
-
-	log.Println("Serveur lancé sur http://localhost:8080")
-	log.Fatal(http.ListenAndServe(":8080", nil))
-}
+    database.InitDB()
+    var forum e.User
+	e.Run(&forum)
+}   

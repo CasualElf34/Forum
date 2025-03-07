@@ -1,8 +1,7 @@
-package utils
+package engine
 
 import (
 	"sync"
-
 	"github.com/google/uuid"
 )
 

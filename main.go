@@ -1,13 +1,11 @@
 package main
 
-import (    
+import (
     e "engine/server"
-    "myforum/server/database"
-
 )
 
 func main() {
-    database.InitDB()
+    e.InitDB()
     var forum e.User
 	e.Run(&forum)
 }   
